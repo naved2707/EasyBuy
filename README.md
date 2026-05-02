@@ -10,7 +10,7 @@ A modern and responsive e-commerce web application built using React. This proje
 ---
 
 ## 📸 Screenshots
-![Home Page](./assets/ss2.png)
+![Home Page](./src/assets/ss1.jpg)
 ![Login Page](./assets/ss1.png)
 ![Add to Cart](./assets/ss3.png)
 ![Total Cart](./assets/ss4.png)
