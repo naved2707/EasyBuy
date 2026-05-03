@@ -1,6 +1,6 @@
 # 🛒 E-Commerce Shopping Website
 
-A modern and responsive e-commerce web application built using React. This project allows users to browse products, view details, and simulate an online shopping experience.
+A modern e-commerce web application built using React. This project allows users to browse products, view details, and simulate an online shopping experience.
 
 ---
 
