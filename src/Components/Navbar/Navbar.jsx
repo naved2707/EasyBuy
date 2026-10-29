@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import { useContext } from 'react'
 import "./Navbar.css"
 import logo from '../../assets/shopping-logo-bg-r.png'
 import cart from '../../assets/cart.png'

@@ -1,16 +1,22 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
 import { BrowserRouter } from 'react-router-dom'
-import ShopContextProvider from './Context/ShopContext.jsx'
+import App from './App'
+import { ToastProvider } from './Context/ToastContext'
+import { AuthProvider } from './Context/AuthContext'
+import { ShopProvider } from './Context/ShopContext'
+import './styles/global.css'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <ShopContextProvider>
     <BrowserRouter>
-    <App />
+      <ToastProvider>
+        <AuthProvider>
+          <ShopProvider>
+            <App />
+          </ShopProvider>
+        </AuthProvider>
+      </ToastProvider>
     </BrowserRouter>
-    </ShopContextProvider>
   </StrictMode>,
 )
