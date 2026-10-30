@@ -22,9 +22,16 @@ app.use((err, _req, res, _next) => {
   res.status(500).json({ message: 'Unexpected server error.' })
 })
 
-connectDatabase(process.env.MONGODB_URI)
-  .then(() => app.listen(port, () => console.log(`EasyBuy API running on http://localhost:${port}`)))
-  .catch((error) => {
-    console.error('Could not start API:', error.message)
-    process.exit(1)
-  })
+
+if (process.env.VERCEL) {
+  await connectDatabase(process.env.MONGODB_URI)
+} else {
+  connectDatabase(process.env.MONGODB_URI)
+    .then(() => app.listen(port, () => console.log(`EasyBuy API running on http://localhost:${port}`)))
+    .catch((error) => {
+      console.error('Could not start API:', error.message)
+      process.exitCode = 1
+    })
+}
+
+export default app
